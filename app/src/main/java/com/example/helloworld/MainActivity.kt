@@ -3,6 +3,7 @@ package com.example.helloworld
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import java.util.*
 
@@ -19,6 +20,8 @@ class MainActivity : AppCompatActivity() {
                 .sortedBy { it }
                 .map { it.toUpperCase(Locale.CHINA) }
                 .forEach { println(it) }
+
+        findViewById<TextView>(R.id.text).text = "close an issue"
     }
 
     fun startActivity1(view: View?) {

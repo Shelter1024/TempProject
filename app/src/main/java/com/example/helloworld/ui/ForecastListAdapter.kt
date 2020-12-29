@@ -1,6 +1,5 @@
-package com.example.helloworld
+package com.example.helloworld.ui
 
-import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView

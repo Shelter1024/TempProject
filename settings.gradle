@@ -1,2 +1,3 @@
+include ':javaproject'
 include ':app'
 rootProject.name = "HelloWorld"

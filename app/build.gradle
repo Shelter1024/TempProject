@@ -37,7 +37,65 @@ dependencies {
     implementation "androidx.core:core-ktx:+"
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     implementation "org.jetbrains.anko:anko-common:$anko_version"
+    implementation "org.jetbrains.anko:anko-sqlite:$anko_version"
+    implementation "com.google.code.gson:gson:2.8.5"
+    implementation "com.squareup.picasso:picasso:2.5.2"
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.1.0'
 }
 repositories {
     mavenCentral()
 }
+
+//task helloWorld {
+//    println 'Hello world!'
+//}
+//
+//
+
+task count(dependsOn: 'upper') {
+    4.times { println "$it" }
+}
+task upper {
+    String something = "my_name"
+    println "Original: " + something
+    println "Upper case: " + something.toUpperCase()
+}
+
+4.times {count ->
+    task "task$count" {
+        println "I'm task number $count"
+    }
+}
+task2.dependsOn 'hello'
+
+task hello {
+    println "hello"
+}
+
+
+hello.doLast {
+    println "hello last $hello.name task"
+}
+
+hello.doFirst {
+    println "hello first"
+}
+
+//task checksum  {
+//    fileList('../antLoadfileResources').each {File file ->
+//        ant.checksum(file: file, property: "cs_$file.name")
+//        println "$file.name Checksum: ${ant.properties["cs_$file.name"]}"
+//    }
+//}
+//task loadfile {
+//    fileList('../antLoadfileResources').each {File file ->
+//        ant.loadfile(srcFile: file, property: file.name)
+//        println "I'm fond of $file.name"
+//    }
+//}
+//File[] fileList(String dir) {
+//    file(dir).listFiles({file -> file.isFile() } as FileFilter)
+//}
+//
+//gradle.taskGraph.whenReady {}
+

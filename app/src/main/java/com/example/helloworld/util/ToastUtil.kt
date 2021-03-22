@@ -16,3 +16,5 @@ object ToastUtil {
 fun Context.makeText(length : Int) : String {
     return "I am a text from fun"
 }
+
+fun String.method(number: Int) = number.toString()
